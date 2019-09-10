@@ -9,9 +9,10 @@ namespace Polymorphism
     class OracleConnection : DbConnection
     {
         
+        
         public OracleConnection(string connectionString):base(connectionString)
         {
-            Timeout = TimeSpan.FromMinutes(5);
+            
         }
         public override void Close()
         {
@@ -21,6 +22,7 @@ namespace Polymorphism
 
         public override void Open()
         {
+            Timeout = TimeSpan.FromMinutes(5);
             if (IsOpen)
             {
                 throw new InvalidOperationException();

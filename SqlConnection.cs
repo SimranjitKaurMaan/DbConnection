@@ -11,7 +11,7 @@ namespace Polymorphism
        
         public SqlConnection(string connectionString):base(connectionString)
         {
-            Timeout = TimeSpan.FromMinutes(2);
+            
         }
 
         public override void Close()
@@ -22,7 +22,8 @@ namespace Polymorphism
 
         public override void Open()
         {
-            if(IsOpen)
+            Timeout = TimeSpan.FromMinutes(2);
+            if (IsOpen)
             {
                 throw new InvalidOperationException();
             }

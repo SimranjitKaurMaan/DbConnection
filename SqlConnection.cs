@@ -8,10 +8,10 @@ namespace Polymorphism
 {
     class SqlConnection : DbConnection
     {
-       
-        public SqlConnection(string connectionString):base(connectionString)
+
+        public SqlConnection(string connectionString) : base(connectionString)
         {
-            
+
         }
 
         public override void Close()
@@ -27,14 +27,9 @@ namespace Polymorphism
             {
                 throw new InvalidOperationException();
             }
-           
-                Console.WriteLine("Opening a sql connection with TimeOut:{0}",Timeout);
-                IsOpen = true;
-           
 
-
-
-            
+            Console.WriteLine("Opening a sql connection with TimeOut:{0}", Timeout);
+            IsOpen = true;
         }
     }
 }

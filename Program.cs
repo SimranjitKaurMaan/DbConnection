@@ -20,6 +20,12 @@ namespace Polymorphism
            // SqlConnection.Open();
             SqlConnection.Close();
             Console.WriteLine();
+
+            DBCommand command = new DBCommand(SqlConnection, "SELECT * FROM dba_users");
+            command.Execute();
+
+            DBCommand command1 = new DBCommand(OracleConnection, "SELECT * FROM hello_users");
+            command1.Execute();
         }
     }
 }
